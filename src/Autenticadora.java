@@ -10,7 +10,6 @@ public class Autenticadora extends DefaultFacebookClient{
 
     public Autenticadora(String appId, String appSecret) {
         AccessToken accessToken = this.obtainAppAccessToken(appId, appSecret);
-            /*this.accessToken = accessToken.getAccessToken();*/
         token = accessToken.getAccessToken();
     }
     public String gettoken(){

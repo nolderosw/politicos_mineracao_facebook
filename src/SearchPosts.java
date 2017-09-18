@@ -14,10 +14,16 @@ public class SearchPosts {
     public SearchPosts(FacebookClient fbClient){
         this.fbClient = fbClient;
     }
-    public void createPostConnection(String string){
-        Connection<Post> results = fbClient.fetchConnection(string+"/feed",Post.class);
+    public boolean createPostConnection(String string){
+        try {
+            Connection<Post> results = fbClient.fetchConnection(string + "/feed", Post.class);
 
-        this.results = results;
+            this.results = results;
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
     }
     public Connection<Post> getResults(){
         return results;

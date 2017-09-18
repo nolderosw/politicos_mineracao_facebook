@@ -12,10 +12,17 @@ public class SearchComments {
     public SearchComments(FacebookClient fbClient){
         this.fbClient = fbClient;
     }
-    public void createCommentConnection(String postID){
-        Connection<Comment> results = fbClient.fetchConnection(postID+"/comments",Comment.class);
+    public boolean createCommentConnection(String postID){
+        try {
+            Connection<Comment> results = fbClient.fetchConnection(postID + "/comments", Comment.class);
 
-        this.results = results;
+            this.results = results;
+
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
     }
     public Connection<Comment> getResults(){
         return results;
