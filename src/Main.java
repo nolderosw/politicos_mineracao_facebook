@@ -16,7 +16,7 @@ import java.util.*;
 
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         Scanner in = new Scanner( System.in );
         //Definição do mapa de Políticos com suas respectivas páginas oficiais (Objeto de pesquisa)
 
