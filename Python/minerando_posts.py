@@ -11,11 +11,11 @@ import unicodedata
 from textblob import TextBlob
 from textblob import TextBlob as tb
 from datetime import datetime
-from translate import translator
+#from translate import translator
 import tweepy
 import numpy as np
 
-#nltk.download() //baixar e instalar as coisas do ntlk
+#nltk.download() #baixar e instalar as coisas do ntlk
 
 now = datetime.now() # instanciando datetime para pegar a hora que minerei tal coisa
 
