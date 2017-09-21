@@ -1,0 +1,125 @@
+\documentclass{beamer}
+
+% \documentclass[draft]{beamer}
+% This is the file main.tex
+
+\beamertemplateshadingbackground{red!10}{blue!10}%{green!10}
+\beamertemplatetransparentcovereddynamic
+\usetheme{Copenhagen} %BLOCOS!!!!!
+
+\usepackage{beamer themesplit}
+\usepackage[ansinew]{inputenc}
+
+\usepackage{graphicx}                       % INSERIR GR{\'A}FICO
+\usepackage{wrapfig}                        % INSERE O GR{\'A}FICO DO LADO DO TEXTO
+\usepackage[normalem]{ulem}                 %
+\usepackage{color}                          %
+\usepackage{here}                           %
+\usepackage{rotating}                       %
+\usepackage{enumerate}                      % Este pacote {\'e} para mudar o padr{\~a}o do ENUMERATE
+\usepackage{comment}
+\usepackage[brazil]{babel}
+\usepackage{url}
+
+
+\title{Detec\c{c}\~ao de pessoas ativas e de comportamento sujeito a an\'alise em P\'aginas do Facebook de Pol\'iticos}
+\author{Wesley Azevedo, Douglas Dantas}
+\date{\today}
+\institute{Instituto Federal de Educa\c{c}\~ao Ci\^encia e Tecnologia da Para\'{\i}ba}
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+	\frametitle{Objetivo}
+	\begin{itemize}
+	\item Constru\c{c}\~ao de uma aplica\c{c}\~ao capaz de minerar e julgar coment\'arios de um Post da rede social Facebook utilizando t\'ecnicas de processamento de linguagem natural (NLP) e identificar, a partir da classifica\c{c}\~ao de seu coment\'ario, pessoas sujeitas a an\'alise.
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{ARQUITETURA DA APLICA\c{C}\~AO}
+	\begin{figure}[h]
+    		\centering
+    		\includegraphics[height=0.6\paperheight]{arquitetura_henrique}
+    		%\includegraphics[height=6cm]{figCoordEsf02}
+    		\caption{Arquitetura da Aplica\c{c}\~ao}\label{arquitetura_henrique}
+  	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{API RESTFB}
+	\begin{block}{Instala\c{c}\~ao e Documenta\c{c}\~ao}
+		Para instala\c{c}\~ao da api e consulta da documenta\c{c}\~ao oficial da restfb, 
+		podemos acessar o site:\href {http://restfb.com/}{http://restfb.com/}
+	\end{block}
+	\begin{block}{Principais Caracteristicas}
+		\begin{itemize}
+			\item Integra\c{c}\~ao com a vers\~ao mais recente da Graph API do facebook;
+			\item M\'etodos simplificados e que "fazem o trabalho" pra voc\^e; 
+			\item Funcionamento independente (n\~ao precisa/depende de outras bibliotecas java).
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{MongoDB}
+	\begin{block}{Instala\c{c}\~ao e Documenta\c{c}\~ao}
+		Para instala\c{c}\~ao do banco de dados e consulta da documenta\c{c}\~ao oficial da restfb, 
+		podemos acessar o site:\href {https://www.mongodb.com/}{https://www.mongodb.com/}
+	\end{block}
+	\begin{block}{Principais Caracteristicas}
+		\begin{itemize}
+			\item Banco de dados n\~ao relacional (NoSQL);
+			\item Orientado a documentos do tipo JSON;
+			\item Sintaxe extremamente simples;
+			\item Sharding (Possibilidade de compartilhamento de dados, caso encontra-se no limite de armazenemento);
+			\item GridFS (Possibilidade de armazenas arquivos no pr\'oprio DB, diferente dos DB convencionais). 
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{BIBLIOTECAS UTILIZADAS}
+	\begin{block}{Bibliotecas}
+	\begin{itemize}
+		\item PyMongo; (Acessar Banco de Dados)
+		\item NLTK; (Tratamento de Linguagem Natural)
+		\item String; (Manipula\c{c}\~ao do Texto)
+		\item TextBlob; (An\'alise de Sentimentos)
+		\item Translate; (Traduzir Strings)
+		\item DateTime; (Pegar Hor\'ario)
+		\item Numpy; 
+		\item MatPlotLib; --------- PLOT DE GRAFOS/GRAFICOS
+		\item NetworkX;
+				\end{itemize}
+
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Resultados}
+	\begin{block}{Resultados alcan\c{c}ados}
+		\begin{itemize}
+			\item Todos os POSTS/COMENT\'ARIOS da p\'agina pol\'itica.
+			\item Tratamento de Strings sem as StopWords (Palavras desnecess\'arias.
+			\item An\'alise de Sentimentos
+			\item Incid\^encia de Usu\'arios na p\'agina pol\'tica.
+			\item Determin\c{c}\~ao de Usu\'arios sujeitos a an\'alise por estudiosos.
+		\end{itemize}
+	\end{block}
+	\begin{block}{Propostas de Melhorias}
+		\begin{itemize}
+			\item Plot de Grafos mais espec\'ifico.
+			\item Aumentar a taxa de acertos da An\'alise de Sentimentos.
+			\item Criando uma interface melhor para o usu\'ario final.
+			\item Otimizando a ferramenta para deix\'a-la mais r\'apida/pr\'atica.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\end{document}
+
