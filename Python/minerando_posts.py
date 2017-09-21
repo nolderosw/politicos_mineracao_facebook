@@ -11,7 +11,7 @@ import unicodedata
 from textblob import TextBlob
 from textblob import TextBlob as tb
 from datetime import datetime
-from translate import translator
+#from translate import translator
 import tweepy
 import numpy as np
 from tqdm import tqdm
@@ -20,6 +20,9 @@ import matplotlib.pyplot as plt
 import networkx as nx
 
 #nltk.download() //baixar e instalar as coisas do ntlk
+arq = open("base_dados.txt", "w")
+
+#nltk.download() #baixar e instalar as coisas do ntlk
 
 now = datetime.now() # instanciando datetime para pegar a hora que minerei tal coisa
 '''INICIANDO CONEXÃO COM O BANCO DE DADOS MONGO DB'''
@@ -363,6 +366,7 @@ def main():
     print("HORA DE TÉRMINO DA MINERAÇÂO: %i:%i:%i"%(hora_fim,minuto_fim,segundo_fim))
 
     if int(input("Deseja Plotar Grafo? (1) Para Sim: ")) == 1:
+        
         Plotando_Grafos()
 
 main()
